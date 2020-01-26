@@ -14,3 +14,12 @@
 ## acronym
 
 - `String#scan` may be used as a way to split a string according to a particular pattern.
+
+## isogram
+
+- `Object#!~` - Returns true if two objects do not match (using the =~ method), otherwise
+  false.
+- Use capture groups on a given regex inside the regex, e.g.:
+  ```ruby
+  "foo foo bar bar".scan(/(\w+) \1/) #=> [["foo"], ["bar"]]
+  ```
