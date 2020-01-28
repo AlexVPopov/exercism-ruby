@@ -3,9 +3,9 @@
 class Clock
   attr_reader :hour, :minute
 
-  def initialize(hour: nil, minute: nil)
-    remaining_hour, @minute = minute.nil? ? [0, 0] : minute.divmod(60)
-    @hour = (hour.nil? ? remaining_hour : hour + remaining_hour) % 24
+  def initialize(hour: 0, minute: 0)
+    remaining_hour, @minute = minute.divmod(60)
+    @hour = (hour += remaining_hour) % 24
   end
 
   def to_s
