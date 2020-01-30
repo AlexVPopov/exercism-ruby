@@ -24,9 +24,9 @@ class Tournament
     @results ||=
       games.each_with_object(stats) do |(home_team, away_team, match_result), stats|
         case match_result
-        when 'win'  then increment_stats_for_win(home_team, away_team)
-        when 'loss' then increment_stats_for_win(away_team, home_team)
-        else             increment_stats_for_draw(home_team, away_team)
+        when 'win'  then win(home_team, away_team)
+        when 'loss' then win(away_team, home_team)
+        else             draw(home_team, away_team)
         end
       end
   end
@@ -35,7 +35,7 @@ class Tournament
     input.split("\n").map { |game| game.split(';') }
   end
 
-  def increment_stats_for_win(winner, loser)
+  def win(winner, loser)
     stats[winner][:mp] += 1
     stats[loser][:mp] += 1
     stats[winner][:w] += 1
@@ -43,7 +43,7 @@ class Tournament
     stats[loser][:l] += 1
   end
 
-  def increment_stats_for_draw(first_team, second_team)
+  def draw(first_team, second_team)
     stats[first_team][:mp] += 1
     stats[second_team][:mp] += 1
     stats[first_team][:d] += 1
