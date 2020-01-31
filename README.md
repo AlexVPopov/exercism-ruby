@@ -23,3 +23,8 @@
   ```ruby
   "foo foo bar bar".scan(/(\w+) \1/) #=> [["foo"], ["bar"]]
   ```
+
+## meetup
+
+- Given year and month, to get the date of the last date of the month, use `-1`, e.g.
+  `Date.new(2016, 2, -1).day`
