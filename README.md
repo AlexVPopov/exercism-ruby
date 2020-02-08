@@ -32,3 +32,7 @@
 ## sum-of-multiples
 
 - `Enumerable#flat_map` Returns a new array with the concatenated results of running block once for every element in enum.
+
+## grade-school
+
+- `Array#bsearch` and `Array#bsearch_index`
