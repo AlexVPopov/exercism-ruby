@@ -28,3 +28,7 @@
 
 - Given year and month, to get the date of the last date of the month, use `-1`, e.g.
   `Date.new(2016, 2, -1).day`
+
+## sum-of-multiples
+
+- `Enumerable#flat_map` Returns a new array with the concatenated results of running block once for every element in enum.
